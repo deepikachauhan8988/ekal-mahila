@@ -1,20 +1,29 @@
-const header = document.querySelector("[data-site-header]");
+const header = document.querySelector(".site-header");
 const footer = document.querySelector("[data-site-footer]");
 
-if (header) {
+if (header && !header.innerHTML.trim()) {
     const registrationPage = window.location.pathname.endsWith("registration.html");
     header.innerHTML = `
-        <div class="container header-inner">
-            <a class="brand" href="index.html" aria-label="योजना का मुखपृष्ठ">
-                <span class="brand-mark" aria-hidden="true"><img src="assets/images/uk_logo.jpeg" alt="उत्तराखंड सरकार" loading="eager"></span>
-                <span class="brand-copy"><strong>उत्तराखंड सरकार</strong><small>एकल महिला स्वरोजगार योजना</small></span>
-            </a>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle><span></span><span></span><span></span><b>मेन्यू</b></button>
-            <nav class="primary-navigation" id="primary-navigation" aria-label="मुख्य नेविगेशन" data-navigation>
-                <a href="index.html#yojana">योजना के बारे में</a><a href="index.html#patrata">पात्रता</a><a href="index.html#dastavez">जरूरी दस्तावेज</a>
-                <a class="nav-apply${registrationPage ? " nav-apply-current" : ""}" href="registration.html">${registrationPage ? "आवेदन फॉर्म" : "पंजीकरण करें"} <span aria-hidden="true">↗</span></a>
-            </nav>
+        <div class="header-top">
+            <div class="container header-top-inner">
+                <a class="brand" href="index.html" aria-label="योजना का मुखपृष्ठ">
+                    <span class="brand-mark" aria-hidden="true"><img src="assets/images/uk_logo.jpeg" alt="उत्तराखंड सरकार" loading="eager"></span>
+                    <span class="brand-copy"><strong>उत्तराखंड सरकार</strong><small>मुख्यमंत्री एकल महिला स्वरोजगार योजना</small></span>
+                </a>
+                <div class="header-actions">
+                    <a class="header-help" href="index.html#help"><span class="header-help-icon" aria-hidden="true">?</span><span>सहायता</span></a>
+                    <a class="header-apply${registrationPage ? " header-apply-current" : ""}" href="registration.html">${registrationPage ? "फॉर्म भर रहे हैं" : "आवेदन करें"} <span aria-hidden="true">→</span></a>
+                </div>
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle><span></span><span></span><span></span><b>मेन्यू</b></button>
+            </div>
         </div>`;
+} else if (header) {
+    const registrationPage = window.location.pathname.endsWith("registration.html");
+    const applyBtn = header.querySelector(".header-apply");
+    if (applyBtn) {
+        applyBtn.classList.toggle("header-apply-current", registrationPage);
+        applyBtn.innerHTML = `${registrationPage ? "फॉर्म भर रहे हैं" : "आवेदन करें"} <span aria-hidden="true">→</span>`;
+    }
 }
 
 if (footer) {
@@ -28,18 +37,19 @@ if (footer) {
 
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const navigation = document.querySelector("[data-navigation]");
+const navBar = document.querySelector(".header-nav-bar");
 
-if (menuToggle && navigation) {
+if (menuToggle && navigation && navBar) {
     menuToggle.addEventListener("click", () => {
         const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
         menuToggle.setAttribute("aria-expanded", String(!isOpen));
-        navigation.classList.toggle("navigation-open", !isOpen);
+        navBar.classList.toggle("navigation-open", !isOpen);
     });
 
     navigation.addEventListener("click", (event) => {
         if (event.target.closest("a")) {
             menuToggle.setAttribute("aria-expanded", "false");
-            navigation.classList.remove("navigation-open");
+            navBar.classList.remove("navigation-open");
         }
     });
 }
@@ -73,6 +83,7 @@ if (carousel) {
 const form = document.querySelector("#application-form");
 
 if (form) {
+    const singlePage = form.hasAttribute("data-single-page");
     const steps = Array.from(form.querySelectorAll("[data-form-step]"));
     const indicators = Array.from(form.querySelectorAll("[data-step-indicator]"));
     const previousButton = form.querySelector("[data-previous-step]");
@@ -87,6 +98,13 @@ if (form) {
     let currentStep = 0;
 
     const updateFormStep = (index) => {
+        if (singlePage) {
+            steps.forEach((step) => {
+                step.hidden = false;
+                step.classList.add("is-visible");
+            });
+            return;
+        }
         currentStep = index;
         steps.forEach((step, stepIndex) => {
             const isCurrent = stepIndex === currentStep;
@@ -187,35 +205,56 @@ if (form) {
     contributionInput.addEventListener("input", updateProjectValidity);
     form.elements.namedItem("supportAmount").addEventListener("input", updateProjectValidity);
 
-    nextButton.addEventListener("click", () => {
-        if (currentStep === 2) {
-            updateConditionalFields();
-            updateProjectValidity();
-        }
-        if (validateStep(currentStep)) {
-            updateFormStep(currentStep + 1);
-            form.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    });
+    if (!singlePage) {
+        nextButton.addEventListener("click", () => {
+            if (currentStep === 2) {
+                updateConditionalFields();
+                updateProjectValidity();
+            }
+            if (validateStep(currentStep)) {
+                updateFormStep(currentStep + 1);
+                form.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
 
-    previousButton.addEventListener("click", () => {
-        updateFormStep(currentStep - 1);
-        form.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+        previousButton.addEventListener("click", () => {
+            updateFormStep(currentStep - 1);
+            form.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }
 
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         updateConditionalFields();
         updateProjectValidity();
-        const incompleteStep = steps.findIndex((step, index) => !validateStep(index));
+        const incompleteStep = steps.findIndex((step) =>
+            Array.from(step.querySelectorAll("input, select, textarea")).some((field) => !field.checkValidity())
+        );
         if (incompleteStep !== -1) {
-            updateFormStep(incompleteStep);
+            if (!singlePage) {
+                updateFormStep(incompleteStep);
+            }
+            validateStep(incompleteStep);
             return;
         }
         message.innerHTML = `<strong>आपका आवेदन प्रारूप पूरा है।</strong><p>यह डेमो किसी सरकारी ऑनलाइन सबमिशन सेवा से जुड़ा नहीं है। आपका आवेदन या दस्तावेज कहीं भेजे नहीं गए हैं। आवेदन जमा करने के लिए संबंधित विभाग से संपर्क करें।</p><button class="print-button" type="button" data-print-application>इस पृष्ठ को प्रिंट करें</button>`;
         message.hidden = false;
         message.querySelector("[data-print-application]").addEventListener("click", () => window.print());
         message.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+
+    form.addEventListener("reset", () => {
+        window.setTimeout(() => {
+            form.querySelectorAll("[data-file-name]").forEach((input) => {
+                input.setCustomValidity("");
+                const note = input.closest(".upload-field").querySelector("[data-file-label]");
+                note.classList.remove("file-error");
+                note.textContent = "PDF, JPG या PNG · अधिकतम 5 MB";
+            });
+            updateConditionalFields();
+            updateProjectValidity();
+            message.hidden = true;
+        }, 0);
     });
 
     updateConditionalFields();

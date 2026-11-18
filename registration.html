@@ -3,53 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#153d35">
+    <meta name="theme-color" content="#082e7a">
     <meta name="description" content="मुख्यमंत्री एकल महिला स्वरोजगार योजना आवेदन फॉर्म।">
     <title>पंजीकरण | मुख्यमंत्री एकल महिला स्वरोजगार योजना</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Hind:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/index.css">
-    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/javascriptfile.js" defer></script>
 </head>
 <body class="registration-page">
-    <div class="utility-bar">
-        <div class="container utility-inner">
-            <span>उत्तराखंड सरकार की योजना</span>
-            <div class="utility-links"><a href="#main-content">मुख्य सामग्री पर जाएं</a><span aria-hidden="true">|</span><a href="#form-help">सहायता</a></div>
+    <div class="registration-topbar">
+        <div class="registration-container registration-topbar-inner">
+            <div class="registration-contact"><a href="tel:18001804253">☎ हेल्पलाइन: 1800-180-4253</a><a href="mailto:support@uk.gov.in">✉ support@uk.gov.in</a></div>
+            <div class="registration-accessibility" aria-label="पाठ और भाषा विकल्प"><span>A+</span><span>A</span><span>A-</span><i aria-hidden="true">|</i><span>हिंदी⌄</span></div>
         </div>
     </div>
-    <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
-    <header class="site-header" data-site-header></header>
+    <header class="site-header registration-header">
+        <div class="registration-container registration-nav-row">
+            <a class="registration-brand" href="index.html">
+                <img src="assets/images/uk_logo.jpeg" alt="">
+                <span><strong>उत्तराखण्ड शासन</strong><small>महिला सशक्तिकरण एवं बाल विकास विभाग</small></span>
+            </a>
+            <button class="menu-toggle registration-menu-toggle" type="button" aria-expanded="false" aria-controls="registration-navigation" data-menu-toggle><span></span><span></span><span></span><b>मेन्यू</b></button>
+            <nav class="header-nav-bar registration-nav-bar" aria-label="मुख्य नेविगेशन">
+                <div class="registration-navigation-inner">
+                    <div class="primary-navigation" id="registration-navigation" data-navigation>
+                        <a class="nav-link" href="index.html">मुख्य पृष्ठ</a>
+                        <a class="nav-link" href="index.html#yojana">योजना परिचय</a>
+                        <a class="nav-link" href="index.html#patrata">पात्रता</a>
+                        <a class="nav-link" href="index.html#dastavez">आवश्यक दस्तावेज</a>
+                        <a class="nav-link" href="index.html#sampark">संपर्क</a>
+                    </div>
+                    <a class="registration-login" href="#application-form"><span aria-hidden="true">♟</span> लॉगिन</a>
+                </div>
+            </nav>
+        </div>
+    </header>
     <main id="main-content">
-        <section class="page-banner">
-            <div class="container">
-                <a class="breadcrumb" href="index.html">मुखपृष्ठ <span aria-hidden="true">/</span> आवेदन</a>
-                <p class="section-kicker">ऑनलाइन आवेदन प्रारूप</p>
-                <h1>पंजीकरण फॉर्म</h1>
-                <p>आवेदन प्रारूप के अनुसार जानकारी भरें। आगे बढ़ने पर आपके विवरण इस ब्राउज़र में ही रहेंगे।</p>
+        <section class="registration-hero" aria-labelledby="registration-title">
+            <div class="registration-container registration-hero-inner">
+                <div>
+                    <h1 id="registration-title">मुख्यमंत्री एकल महिला<br>स्वरोजगार योजना</h1>
+                    <p>आवेदन फॉर्म</p>
+                </div>
+                <svg class="registration-hero-art" viewBox="0 0 430 140" aria-hidden="true">
+                    <path d="M0 139 93 58l37 33 51-65 86 83 39-41 71 59 53-38v51H0Z" fill="#c6d3ff" opacity=".8"/>
+                    <path d="m93 58 22 20 15 13 51-65 39 38-18-8-17 18-14-13-41 54-18-28-20 1-19-20-24 19Z" fill="#f3f5ff" opacity=".9"/>
+                    <path d="M309 136c7-21 17-33 33-38-11-8-17-20-14-35 3-20 18-33 36-32 19 1 32 17 30 37-1 13-9 24-19 31 16 6 27 19 34 37l4 4h-108Z" fill="#142b9a"/>
+                    <path d="M350 37c5 7 11 12 21 15m-38 8c5 1 8 0 11-2m24 7c-5 5-11 7-18 6m4 10c6 0 11-2 15-6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                    <path d="M0 121c70-20 105-18 159 0 57 19 100 19 153-2 42-16 82-20 118-9" fill="none" stroke="#e6eaff" stroke-width="3" opacity=".8"/>
+                </svg>
             </div>
         </section>
-        <section class="application-section">
-            <div class="container application-layout">
-                <form class="application-card" id="application-form" novalidate>
+        <section class="application-section registration-application">
+            <div class="registration-container application-layout registration-layout">
+                <form class="application-card registration-form" id="application-form" data-single-page novalidate>
                     <div class="form-topline">
                         <div><p class="section-kicker">मुख्यमंत्री एकल महिला स्वरोजगार योजना</p><h2>आवेदक का विवरण</h2></div>
                         <span class="required-note"><b aria-hidden="true">*</b> अनिवार्य जानकारी</span>
                     </div>
-                    <div class="stepper" data-stepper aria-label="आवेदन के चरण">
-                        <div class="stepper-item is-current" data-step-indicator="0"><span>01</span><small>व्यक्तिगत</small></div>
-                        <i></i>
-                        <div class="stepper-item" data-step-indicator="1"><span>02</span><small>पात्रता</small></div>
-                        <i></i>
-                        <div class="stepper-item" data-step-indicator="2"><span>03</span><small>व्यवसाय</small></div>
-                        <i></i>
-                        <div class="stepper-item" data-step-indicator="3"><span>04</span><small>दस्तावेज</small></div>
-                    </div>
                     <div class="form-notice"><span aria-hidden="true">i</span><p>कृपया जानकारी अपने प्रमाण-पत्रों के अनुसार भरें। <b>इस प्रारूप से आवेदन जमा नहीं होता।</b></p></div>
 
                     <section class="form-step is-visible" data-form-step="0" aria-labelledby="step-title-1">
-                        <div class="form-step-heading"><span>चरण 01</span><h3 id="step-title-1">व्यक्तिगत जानकारी</h3><p>आवेदक की पहचान और स्थायी पते का विवरण।</p></div>
+                        <div class="form-step-heading"><span aria-hidden="true">01</span><h3 id="step-title-1">व्यक्तिगत जानकारी</h3><p>आवेदक की पहचान और स्थायी पते का विवरण।</p></div>
                         <div class="fields-grid">
                             <label class="field"><span>महिला का पूरा नाम <b>*</b></span><input name="fullName" type="text" autocomplete="name" required placeholder="प्रमाण-पत्र के अनुसार नाम"></label>
                             <label class="field"><span>पिता / पति का नाम <b>*</b></span><input name="guardianName" type="text" required placeholder="पिता या पति का पूरा नाम"></label>
@@ -60,12 +77,11 @@
                             <label class="field"><span>आधार कार्ड संख्या <b>*</b></span><input name="aadhaar" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{12}" maxlength="12" required placeholder="12 अंकों की संख्या" aria-describedby="aadhaar-hint"><small id="aadhaar-hint">केवल 12 अंकों की संख्या दर्ज करें।</small></label>
                             <label class="field"><span>मोबाइल नंबर <b>*</b></span><input name="mobile" type="tel" inputmode="numeric" autocomplete="tel" pattern="[6-9][0-9]{9}" maxlength="10" required placeholder="10 अंकों का मोबाइल नंबर"></label>
                             <label class="field"><span>जन्म तिथि <b>*</b></span><input name="birthDate" type="date" required></label>
-                            <label class="field upload-field"><span>पासपोर्ट आकार का फोटो <b>*</b></span><input name="photo" type="file" accept=".jpg,.jpeg,.png,.pdf" required data-file-name><small data-file-label>JPG, PNG या PDF · अधिकतम 5 MB</small></label>
                         </div>
                     </section>
 
-                    <section class="form-step" data-form-step="1" aria-labelledby="step-title-2" hidden>
-                        <div class="form-step-heading"><span>चरण 02</span><h3 id="step-title-2">पात्रता एवं आय</h3><p>अपनी लागू श्रेणी और पारिवारिक आय दर्ज करें।</p></div>
+                    <section class="form-step" data-form-step="1" aria-labelledby="step-title-2">
+                        <div class="form-step-heading"><span aria-hidden="true">02</span><h3 id="step-title-2">पात्रता एवं आय</h3><p>अपनी लागू श्रेणी और पारिवारिक आय दर्ज करें।</p></div>
                         <fieldset class="choice-fieldset">
                             <legend>आवेदक की श्रेणी <b>*</b></legend>
                             <p>अपनी संबंधित श्रेणी चुनें। प्रमाण-पत्र अगले चरण में अपलोड करें।</p>
@@ -86,8 +102,8 @@
                         <p class="form-hint">पारिवारिक आय और श्रेणी के प्रमाण-पत्र आवेदन के साथ संलग्न करें। पेंशन प्रमाण लागू होने पर साथ रखें।</p>
                     </section>
 
-                    <section class="form-step" data-form-step="2" aria-labelledby="step-title-3" hidden>
-                        <div class="form-step-heading"><span>चरण 03</span><h3 id="step-title-3">व्यवसाय एवं परियोजना</h3><p>व्यवसाय चुनें, परियोजना लागत और अंशदान की जानकारी दें।</p></div>
+                    <section class="form-step" data-form-step="2" aria-labelledby="step-title-3">
+                        <div class="form-step-heading"><span aria-hidden="true">03</span><h3 id="step-title-3">व्यवसाय एवं परियोजना</h3><p>व्यवसाय चुनें, परियोजना लागत और अंशदान की जानकारी दें।</p></div>
                         <div class="fields-grid">
                             <label class="field"><span>चयनित व्यवसाय का नाम <b>*</b></span>
                                 <select name="business" required>
@@ -124,9 +140,10 @@
                         </div>
                     </section>
 
-                    <section class="form-step" data-form-step="3" aria-labelledby="step-title-4" hidden>
-                        <div class="form-step-heading"><span>चरण 04</span><h3 id="step-title-4">दस्तावेज एवं घोषणा</h3><p>प्रमाण-पत्रों की साफ और पढ़ने योग्य प्रतियां अपलोड करें।</p></div>
+                    <section class="form-step" data-form-step="3" aria-labelledby="step-title-4">
+                        <div class="form-step-heading"><span aria-hidden="true">04</span><h3 id="step-title-4">दस्तावेज एवं घोषणा</h3><p>प्रमाण-पत्रों की साफ और पढ़ने योग्य प्रतियां अपलोड करें।</p></div>
                         <div class="fields-grid">
+                            <label class="field upload-field"><span>स्वप्रमाणित फोटो <b>*</b></span><input name="photo" type="file" accept=".jpg,.jpeg,.png,.pdf" required data-file-name><small data-file-label>JPG, PNG या PDF · अधिकतम 5 MB</small></label>
                             <label class="field upload-field"><span>स्थायी / मूल निवास प्रमाण-पत्र <b>*</b></span><input name="domicileProof" type="file" accept=".pdf,.jpg,.jpeg,.png" required data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
                             <label class="field upload-field"><span>जन्म-तिथि प्रमाण <b>*</b></span><input name="birthProof" type="file" accept=".pdf,.jpg,.jpeg,.png" required data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
                             <label class="field upload-field"><span>श्रेणी का संबंधित प्रमाण-पत्र <b>*</b></span><input name="categoryProof" type="file" accept=".pdf,.jpg,.jpeg,.png" required data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
@@ -142,17 +159,22 @@
                         </div>
                     </section>
 
-                    <div class="form-navigation">
-                        <button class="button button-back" type="button" data-previous-step hidden>← <span>पिछला चरण</span></button>
-                        <span class="step-count" data-step-count>चरण 1 / 4</span>
-                        <button class="button button-primary" type="button" data-next-step>आगे बढ़ें <span aria-hidden="true">→</span></button>
-                        <button class="button button-primary" type="submit" data-submit-application hidden>आवेदन पूर्वावलोकन <span aria-hidden="true">✓</span></button>
+                    <div class="registration-form-actions">
+                        <button class="registration-reset" type="reset"><span aria-hidden="true">↻</span> रीसेट करें</button>
+                        <button class="registration-submit" type="submit" data-submit-application><span aria-hidden="true">➤</span> आवेदन जमा करें</button>
                     </div>
                     <div class="submission-message" data-submission-message role="status" hidden></div>
                 </form>
 
-                <aside class="application-sidebar" id="form-help">
-                    <div class="sidebar-card">
+                <aside class="application-sidebar registration-sidebar" id="form-help">
+                    <div class="registration-process-card">
+                        <h2>आवेदन प्रक्रिया</h2>
+                        <a href="#step-title-1"><span>1</span><b>व्यक्तिगत<br>जानकारी</b></a>
+                        <a href="#step-title-2"><span>2</span><b>पात्रता एवं<br>आय जानकारी</b></a>
+                        <a href="#step-title-3"><span>3</span><b>व्यवसाय एवं<br>परियोजना विवरण</b></a>
+                        <a href="#step-title-4"><span>4</span><b>दस्तावेज अपलोड<br>करें</b></a>
+                    </div>
+                    <div class="sidebar-card registration-help-card">
                         <span class="sidebar-icon" aria-hidden="true">i</span>
                         <h3>फॉर्म भरने में मदद</h3>
                         <p>अपनी जानकारी प्रमाण-पत्रों से मिलाकर भरें। मोबाइल नंबर और आधार संख्या जांच लें।</p>
