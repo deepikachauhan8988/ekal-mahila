@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#153d35">
+    <meta name="description" content="मुख्यमंत्री एकल महिला स्वरोजगार योजना आवेदन फॉर्म।">
+    <title>पंजीकरण | मुख्यमंत्री एकल महिला स्वरोजगार योजना</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <script src="assets/js/app.js" defer></script>
+</head>
+<body class="registration-page">
+    <div class="utility-bar">
+        <div class="container utility-inner">
+            <span>उत्तराखंड सरकार की योजना</span>
+            <div class="utility-links"><a href="#main-content">मुख्य सामग्री पर जाएं</a><span aria-hidden="true">|</span><a href="#form-help">सहायता</a></div>
+        </div>
+    </div>
+    <div class="tricolor" aria-hidden="true"><span></span><span></span><span></span></div>
+    <header class="site-header" data-site-header></header>
+    <main id="main-content">
+        <section class="page-banner">
+            <div class="container">
+                <a class="breadcrumb" href="index.html">मुखपृष्ठ <span aria-hidden="true">/</span> आवेदन</a>
+                <p class="section-kicker">ऑनलाइन आवेदन प्रारूप</p>
+                <h1>पंजीकरण फॉर्म</h1>
+                <p>आवेदन प्रारूप के अनुसार जानकारी भरें। आगे बढ़ने पर आपके विवरण इस ब्राउज़र में ही रहेंगे।</p>
+            </div>
+        </section>
+        <section class="application-section">
+            <div class="container application-layout">
+                <form class="application-card" id="application-form" novalidate>
+                    <div class="form-topline">
+                        <div><p class="section-kicker">मुख्यमंत्री एकल महिला स्वरोजगार योजना</p><h2>आवेदक का विवरण</h2></div>
+                        <span class="required-note"><b aria-hidden="true">*</b> अनिवार्य जानकारी</span>
+                    </div>
+                    <div class="stepper" data-stepper aria-label="आवेदन के चरण">
+                        <div class="stepper-item is-current" data-step-indicator="0"><span>01</span><small>व्यक्तिगत</small></div>
+                        <i></i>
+                        <div class="stepper-item" data-step-indicator="1"><span>02</span><small>पात्रता</small></div>
+                        <i></i>
+                        <div class="stepper-item" data-step-indicator="2"><span>03</span><small>व्यवसाय</small></div>
+                        <i></i>
+                        <div class="stepper-item" data-step-indicator="3"><span>04</span><small>दस्तावेज</small></div>
+                    </div>
+                    <div class="form-notice"><span aria-hidden="true">i</span><p>कृपया जानकारी अपने प्रमाण-पत्रों के अनुसार भरें। <b>इस प्रारूप से आवेदन जमा नहीं होता।</b></p></div>
+
+                    <section class="form-step is-visible" data-form-step="0" aria-labelledby="step-title-1">
+                        <div class="form-step-heading"><span>चरण 01</span><h3 id="step-title-1">व्यक्तिगत जानकारी</h3><p>आवेदक की पहचान और स्थायी पते का विवरण।</p></div>
+                        <div class="fields-grid">
+                            <label class="field"><span>महिला का पूरा नाम <b>*</b></span><input name="fullName" type="text" autocomplete="name" required placeholder="प्रमाण-पत्र के अनुसार नाम"></label>
+                            <label class="field"><span>पिता / पति का नाम <b>*</b></span><input name="guardianName" type="text" required placeholder="पिता या पति का पूरा नाम"></label>
+                            <label class="field"><span>माता का नाम <b>*</b></span><input name="motherName" type="text" required placeholder="माता का पूरा नाम"></label>
+                            <label class="field"><span>स्थायी निवास का गांव / वार्ड <b>*</b></span><input name="villageWard" type="text" autocomplete="address-level3" required placeholder="गांव या वार्ड का नाम"></label>
+                            <label class="field"><span>बाल विकास परियोजना का नाम <b>*</b></span><input name="developmentProject" type="text" required placeholder="परियोजना का नाम"></label>
+                            <label class="field"><span>जनपद का नाम <b>*</b></span><select name="district" required><option value="">जनपद चुनें</option><option>अल्मोड़ा</option><option>बागेश्वर</option><option>चमोली</option><option>चम्पावत</option><option>देहरादून</option><option>हरिद्वार</option><option>नैनीताल</option><option>पौड़ी गढ़वाल</option><option>पिथौरागढ़</option><option>रुद्रप्रयाग</option><option>टिहरी गढ़वाल</option><option>ऊधम सिंह नगर</option><option>उत्तरकाशी</option></select></label>
+                            <label class="field"><span>आधार कार्ड संख्या <b>*</b></span><input name="aadhaar" type="text" inputmode="numeric" autocomplete="off" pattern="[0-9]{12}" maxlength="12" required placeholder="12 अंकों की संख्या" aria-describedby="aadhaar-hint"><small id="aadhaar-hint">केवल 12 अंकों की संख्या दर्ज करें।</small></label>
+                            <label class="field"><span>मोबाइल नंबर <b>*</b></span><input name="mobile" type="tel" inputmode="numeric" autocomplete="tel" pattern="[6-9][0-9]{9}" maxlength="10" required placeholder="10 अंकों का मोबाइल नंबर"></label>
+                            <label class="field"><span>जन्म तिथि <b>*</b></span><input name="birthDate" type="date" required></label>
+                            <label class="field upload-field"><span>पासपोर्ट आकार का फोटो <b>*</b></span><input name="photo" type="file" accept=".jpg,.jpeg,.png,.pdf" required data-file-name><small data-file-label>JPG, PNG या PDF · अधिकतम 5 MB</small></label>
+                        </div>
+                    </section>
+
+                    <section class="form-step" data-form-step="1" aria-labelledby="step-title-2" hidden>
+                        <div class="form-step-heading"><span>चरण 02</span><h3 id="step-title-2">पात्रता एवं आय</h3><p>अपनी लागू श्रेणी और पारिवारिक आय दर्ज करें।</p></div>
+                        <fieldset class="choice-fieldset">
+                            <legend>आवेदक की श्रेणी <b>*</b></legend>
+                            <p>अपनी संबंधित श्रेणी चुनें। प्रमाण-पत्र अगले चरण में अपलोड करें।</p>
+                            <div class="category-options">
+                                <label><input type="radio" name="category" value="एकल / निराश्रित महिला" required><span>एकल / निराश्रित महिला</span></label>
+                                <label><input type="radio" name="category" value="विधवा"><span>विधवा</span></label>
+                                <label><input type="radio" name="category" value="परित्यक्ता"><span>परित्यक्ता</span></label>
+                                <label><input type="radio" name="category" value="तलाकशुदा"><span>तलाकशुदा</span></label>
+                                <label><input type="radio" name="category" value="किन्नर"><span>किन्नर</span></label>
+                                <label><input type="radio" name="category" value="अपराध या एसिड हमले से पीड़ित"><span>अपराध या एसिड हमले से पीड़ित</span></label>
+                                <label><input type="radio" name="category" value="अवयस्क बच्चों / अविवाहित पुत्री के पालन की जिम्मेदारी"><span>अवयस्क बच्चों / अविवाहित पुत्री के पालन की जिम्मेदारी</span></label>
+                            </div>
+                        </fieldset>
+                        <div class="fields-grid fields-grid-short">
+                            <label class="field"><span>पारिवारिक आय (₹) <b>*</b></span><input name="familyIncome" type="number" min="0" step="1" inputmode="numeric" required placeholder="रुपयों में"></label>
+                            <label class="field"><span>पेंशन का विवरण <small>(यदि लागू हो)</small></span><input name="pensionDetails" type="text" placeholder="जैसे: विधवा / दिव्यांग पेंशन"></label>
+                        </div>
+                        <p class="form-hint">पारिवारिक आय और श्रेणी के प्रमाण-पत्र आवेदन के साथ संलग्न करें। पेंशन प्रमाण लागू होने पर साथ रखें।</p>
+                    </section>
+
+                    <section class="form-step" data-form-step="2" aria-labelledby="step-title-3" hidden>
+                        <div class="form-step-heading"><span>चरण 03</span><h3 id="step-title-3">व्यवसाय एवं परियोजना</h3><p>व्यवसाय चुनें, परियोजना लागत और अंशदान की जानकारी दें।</p></div>
+                        <div class="fields-grid">
+                            <label class="field"><span>चयनित व्यवसाय का नाम <b>*</b></span>
+                                <select name="business" required>
+                                    <option value="">व्यवसाय चुनें</option>
+                                    <optgroup label="कृषि एवं उत्पादन"><option>कृषि</option><option>बागवानी</option><option>पशुपालन</option><option>मुर्गी पालन</option><option>भेड़ / बकरी पालन</option><option>मत्स्य पालन</option><option>उद्यान</option><option>फल एवं खाद्य प्रसंस्करण</option></optgroup>
+                                    <optgroup label="कौशल एवं सेवाएं"><option>ब्यूटी पार्लर</option><option>बुटीक</option><option>रिपेयरिंग / अल्टरेशन</option><option>सिलाई / टेलरिंग</option><option>सौंदर्य प्रसाधन</option><option>जनरल स्टोर</option><option>जलपान / टिफिन सेवा</option><option>कैंटीन / कैटरिंग</option><option>प्लंबर</option><option>इलेक्ट्रीशियन</option><option>डेटा एंट्री</option><option>कंप्यूटर हार्डवेयर रिपेयरिंग</option><option>टेली-कॉलिंग</option><option>हिंदी कॉल सेंटर</option><option>अन्य निजी व्यवसाय</option></optgroup>
+                                </select>
+                            </label>
+                        </div>
+                        <fieldset class="choice-fieldset compact-choice">
+                            <legend>क्या इस व्यवसाय के लिए किसी अन्य विभाग से राशि मिली है? <b>*</b></legend>
+                            <div class="inline-options"><label><input type="radio" name="otherDepartmentFunds" value="हाँ" required><span>हाँ</span></label><label><input type="radio" name="otherDepartmentFunds" value="नहीं"><span>नहीं</span></label></div>
+                        </fieldset>
+                        <div class="fields-grid fields-grid-short conditional-fields" data-funds-details hidden>
+                            <label class="field"><span>विभाग का नाम</span><input name="otherDepartmentName" type="text" placeholder="विभाग का नाम"></label>
+                            <label class="field"><span>प्राप्त राशि (₹)</span><input name="otherDepartmentAmount" type="number" min="0" inputmode="numeric" placeholder="रुपयों में"></label>
+                        </div>
+                        <fieldset class="choice-fieldset declaration-choice">
+                            <legend>नोटरीकृत घोषणा-पत्र संलग्न है? <b>*</b></legend>
+                            <div class="inline-options"><label><input type="radio" name="notarizedDeclaration" value="हाँ" required><span>हाँ</span></label><label><input type="radio" name="notarizedDeclaration" value="नहीं"><span>नहीं</span></label></div>
+                        </fieldset>
+                        <fieldset class="choice-fieldset declaration-choice">
+                            <legend>दोहरा लाभ न लेने संबंधी नोटरीकृत स्व-घोषणा संलग्न है? <b>*</b></legend>
+                            <div class="inline-options"><label><input type="radio" name="noDoubleBenefitDeclaration" value="हाँ" required><span>हाँ</span></label><label><input type="radio" name="noDoubleBenefitDeclaration" value="नहीं"><span>नहीं</span></label></div>
+                        </fieldset>
+                        <div class="fields-grid fields-grid-short">
+                            <label class="field"><span>चयनित व्यवसाय के लिए प्रशिक्षण / अनुभव <b>*</b></span><select name="experience" required><option value="">विकल्प चुनें</option><option value="हाँ">हाँ</option><option value="नहीं">नहीं</option></select></label>
+                        </div>
+                        <div class="fields-grid fields-grid-short cost-fields">
+                            <label class="field"><span>प्रस्तावित कुल परियोजना लागत (₹) <b>*</b></span><input name="projectCost" type="number" min="1" step="1" inputmode="numeric" required placeholder="कुल लागत रुपयों में"></label>
+                            <label class="field"><span>मांगी गई सहायता राशि (₹) <b>*</b></span><input name="supportAmount" type="number" min="0" max="150000" step="1" inputmode="numeric" required placeholder="अधिकतम ₹1,50,000"></label>
+                            <label class="field"><span>लाभार्थी का 25% अंशदान (₹) <b>*</b></span><input name="contribution" type="number" min="0" step="1" inputmode="numeric" required placeholder="ऋण या निजी स्रोत"></label>
+                            <div class="contribution-note" data-contribution-note>परियोजना लागत का कम-से-कम 25% लाभार्थी का योगदान होना चाहिए।</div>
+                        </div>
+                    </section>
+
+                    <section class="form-step" data-form-step="3" aria-labelledby="step-title-4" hidden>
+                        <div class="form-step-heading"><span>चरण 04</span><h3 id="step-title-4">दस्तावेज एवं घोषणा</h3><p>प्रमाण-पत्रों की साफ और पढ़ने योग्य प्रतियां अपलोड करें।</p></div>
+                        <div class="fields-grid">
+                            <label class="field upload-field"><span>स्थायी / मूल निवास प्रमाण-पत्र <b>*</b></span><input name="domicileProof" type="file" accept=".pdf,.jpg,.jpeg,.png" required data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
+                            <label class="field upload-field"><span>जन्म-तिथि प्रमाण <b>*</b></span><input name="birthProof" type="file" accept=".pdf,.jpg,.jpeg,.png" required data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
+                            <label class="field upload-field"><span>श्रेणी का संबंधित प्रमाण-पत्र <b>*</b></span><input name="categoryProof" type="file" accept=".pdf,.jpg,.jpeg,.png" required data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
+                            <label class="field upload-field"><span>पारिवारिक आय प्रमाण-पत्र <b>*</b></span><input name="incomeProof" type="file" accept=".pdf,.jpg,.jpeg,.png" required data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
+                            <label class="field upload-field"><span>पेंशन प्रमाण <small>(यदि लागू हो)</small></span><input name="pensionProof" type="file" accept=".pdf,.jpg,.jpeg,.png" data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
+                            <label class="field upload-field" data-declaration-upload="notarizedDeclaration"><span>नोटरीकृत घोषणा-पत्र <small>(यदि ऊपर हाँ चुना है)</small></span><input name="notarizedProof" type="file" accept=".pdf,.jpg,.jpeg,.png" data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
+                            <label class="field upload-field" data-declaration-upload="noDoubleBenefitDeclaration"><span>दोहरा लाभ न लेने की स्व-घोषणा <small>(यदि ऊपर हाँ चुना है)</small></span><input name="noDoubleBenefitProof" type="file" accept=".pdf,.jpg,.jpeg,.png" data-file-name><small data-file-label>PDF, JPG या PNG · अधिकतम 5 MB</small></label>
+                        </div>
+                        <div class="applicant-declaration"><span class="declaration-mark" aria-hidden="true">✓</span><div><strong>आवेदक की घोषणा</strong><p>मैं प्रमाणित करती हूं कि ऊपर दी गई जानकारी और संलग्न दस्तावेज सही हैं। गलत जानकारी पाए जाने पर मेरा आवेदन निरस्त किया जा सकता है।</p></div></div>
+                        <div class="fields-grid fields-grid-short signature-fields">
+                            <label class="field"><span>आवेदक का नाम <b>*</b></span><input name="declarantName" type="text" required placeholder="पूरा नाम"></label>
+                            <label class="field"><span>हस्ताक्षर के स्थान पर नाम लिखें <b>*</b></span><input name="signatureName" type="text" required placeholder="आवेदक का पूरा नाम"></label>
+                        </div>
+                    </section>
+
+                    <div class="form-navigation">
+                        <button class="button button-back" type="button" data-previous-step hidden>← <span>पिछला चरण</span></button>
+                        <span class="step-count" data-step-count>चरण 1 / 4</span>
+                        <button class="button button-primary" type="button" data-next-step>आगे बढ़ें <span aria-hidden="true">→</span></button>
+                        <button class="button button-primary" type="submit" data-submit-application hidden>आवेदन पूर्वावलोकन <span aria-hidden="true">✓</span></button>
+                    </div>
+                    <div class="submission-message" data-submission-message role="status" hidden></div>
+                </form>
+
+                <aside class="application-sidebar" id="form-help">
+                    <div class="sidebar-card">
+                        <span class="sidebar-icon" aria-hidden="true">i</span>
+                        <h3>फॉर्म भरने में मदद</h3>
+                        <p>अपनी जानकारी प्रमाण-पत्रों से मिलाकर भरें। मोबाइल नंबर और आधार संख्या जांच लें।</p>
+                        <ul><li>फाइल का आकार 5 MB तक रखें।</li><li>फोटो और प्रमाण साफ व पढ़ने योग्य हों।</li><li>लाल <b>*</b> वाले विवरण अनिवार्य हैं।</li></ul>
+                    </div>
+                    <div class="sidebar-card sidebar-card-tint">
+                        <p class="section-kicker">योजना की मुख्य जानकारी</p>
+                        <div class="sidebar-stat"><strong>₹1.5 लाख</strong><span>तक मांगी गई सहायता</span></div>
+                        <div class="sidebar-stat"><strong>25%</strong><span>लाभार्थी का योगदान</span></div>
+                    </div>
+                    <a class="sidebar-back" href="index.html">← योजना के मुखपृष्ठ पर जाएं</a>
+                </aside>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer" data-site-footer></footer>
+</body>
+</html>
