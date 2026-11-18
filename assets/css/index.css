@@ -877,7 +877,7 @@ img { max-width: 100%; height: auto; display: block; }
 .required-note b, .field b, .choice-fieldset legend b { color: #a67c00; }
 .stepper {
     display: grid;
-    grid-template-columns: auto 1fr auto 1fr auto 1fr auto;
+    grid-template-columns: auto 1fr auto 1fr auto;
     align-items: start;
     margin: 23px 0 19px;
 }
@@ -1251,7 +1251,7 @@ img { max-width: 100%; height: auto; display: block; }
 .reference-all-documents { grid-column: span 2; align-self: center; min-height: 46px; display: flex; justify-content: center; align-items: center; gap: 9px; margin-inline: 5px; border-radius: 25px; color: #fff; background: linear-gradient(105deg, #1243a0, #082f88); font-size: 13px; font-weight: 700; }
 
 .reference-eligibility { padding: 18px 0; background: linear-gradient(110deg, #f5f2ff, #edf2ff 55%, #f7faff); }
-.reference-eligibility-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
+.reference-eligibility-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
 .reference-eligibility-card { position: relative; min-height: 132px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px 13px 12px; border: 1px solid #e0e5f7; border-radius: 12px; background: rgba(255,255,255,.9); box-shadow: 0 2px 6px rgba(24, 39, 101, .08); text-align: center; }
 .reference-eligibility-number { position: absolute; top: 8px; right: 10px; color: #7870b8; font-family: "DM Sans", sans-serif; font-size: 11px; font-weight: 700; }
 .reference-eligibility-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; font-size: 19px; font-weight: 700; }
@@ -1343,7 +1343,7 @@ img { max-width: 100%; height: auto; display: block; }
     .reference-document-tile { min-height: 70px; padding: 4px; }
     .reference-document-tile > span { font-size: 20px; }
     .reference-document-tile b { font-size: 9px; }
-    .reference-business-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+    .reference-business-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
     .reference-business-grid a { min-height: 78px; }
     .reference-business-grid span { font-size: 23px; }
     .reference-business-grid b { font-size: 8px; }
@@ -1405,7 +1405,7 @@ img { max-width: 100%; height: auto; display: block; }
 .registration-form .form-step-heading > span { width: 24px; height: 24px; flex: 0 0 24px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: #2715a9; font-family: "DM Sans", sans-serif; font-size: 10px; font-weight: 700; line-height: 1; letter-spacing: 0; }
 .registration-form .form-step-heading h3 { margin: 0; color: #121b5a; font-size: 13px; font-weight: 700; }
 .registration-form .form-step-heading p { display: none; }
-.registration-form .fields-grid { gap: 7px 12px; }
+.registration-form .fields-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 16px; }
 .registration-form .fields-grid-short { margin-top: 8px; }
 .registration-form .field { gap: 3px; color: #1d2556; font-size: 10px; font-weight: 700; }
 .registration-form .field b, .registration-form .choice-fieldset legend b { color: #ed303e; }
@@ -1417,9 +1417,9 @@ img { max-width: 100%; height: auto; display: block; }
 .registration-form .field input[type="file"] { min-height: 50px; padding: 5px; border: 1px solid #d1d2ff; border-radius: 7px; color: #3324a1; background: #f8f8ff; font-size: 9px; }
 .registration-form .field input[type="file"]::file-selector-button { margin-inline-end: 4px; padding: 4px; border-radius: 5px; color: #fff; background: #4d20bd; font-size: 9px; }
 .registration-form .form-step-heading + .fields-grid { margin-top: 0; }
-.registration-form .form-step[data-form-step="3"] .fields-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
-.registration-form .form-step[data-form-step="3"] .upload-field { min-width: 0; padding: 5px; border: 1px solid #d8d9ff; border-radius: 7px; background: #fafaff; }
-.registration-form .form-step[data-form-step="3"] .field > span { line-height: 1.35; }
+.registration-form .form-step[data-form-step="2"] .fields-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+.registration-form .form-step[data-form-step="2"] .upload-field { min-width: 0; padding: 5px; border: 1px solid #d8d9ff; border-radius: 7px; background: #fafaff; }
+.registration-form .form-step[data-form-step="2"] .field > span { line-height: 1.35; }
 .registration-form .choice-fieldset { margin: 8px 0; }
 .registration-form .choice-fieldset legend { margin-bottom: 4px; color: #1d2556; font-size: 10px; font-weight: 700; }
 .registration-form .choice-fieldset > p, .registration-form .form-hint { margin: 0 0 5px; color: #737cae; font-size: 9px; }
@@ -1497,12 +1497,12 @@ img { max-width: 100%; height: auto; display: block; }
     .registration-layout { grid-template-columns: minmax(0, 1fr); }
     .registration-form { grid-column: 1; grid-row: 1; }
     .registration-sidebar { position: static; grid-column: 1; grid-row: 2; }
-    .registration-process-card { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+    .registration-process-card { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
     .registration-process-card h2 { grid-column: 1 / -1; }
     .registration-process-card a { min-height: 58px; flex-direction: column; justify-content: center; gap: 4px; text-align: center; }
     .registration-process-card a:not(:last-child)::after { display: none; }
     .registration-help-card { display: none; }
-    .registration-form .form-step[data-form-step="3"] .fields-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .registration-form .form-step[data-form-step="2"] .fields-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 420px) {
     .registration-topbar-inner { min-height: 24px; }
@@ -1511,7 +1511,8 @@ img { max-width: 100%; height: auto; display: block; }
     .registration-hero h1 { font-size: 21px; }
     .registration-hero-art { right: -40px; width: 58%; }
     .registration-form .fields-grid { grid-template-columns: minmax(0, 1fr); }
-    .registration-form .form-step[data-form-step="3"] .fields-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .registration-form .form-step[data-form-step="2"] .fields-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .registration-form-actions { justify-content: stretch; }
     .registration-reset, .registration-submit { min-width: 0; flex: 1; padding-inline: 5px; font-size: 10px; }
 }
+

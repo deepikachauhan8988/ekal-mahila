@@ -207,7 +207,7 @@ if (form) {
 
     if (!singlePage) {
         nextButton.addEventListener("click", () => {
-            if (currentStep === 2) {
+            if (currentStep === 1) {
                 updateConditionalFields();
                 updateProjectValidity();
             }
