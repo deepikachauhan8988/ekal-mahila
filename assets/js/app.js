@@ -6,8 +6,8 @@ if (header) {
     header.innerHTML = `
         <div class="container header-inner">
             <a class="brand" href="index.html" aria-label="योजना का मुखपृष्ठ">
-                <span class="brand-mark" aria-hidden="true"><span>उ</span></span>
-                <span class="brand-copy"><strong>उत्तराखंड सरकार</strong><small>महिला सशक्तिकरण एवं बाल विकास</small></span>
+                <span class="brand-mark" aria-hidden="true"><img src="assets/images/uk_logo.jpeg" alt="उत्तराखंड सरकार" loading="eager"></span>
+                <span class="brand-copy"><strong>उत्तराखंड सरकार</strong><small>एकल महिला स्वरोजगार योजना</small></span>
             </a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle><span></span><span></span><span></span><b>मेन्यू</b></button>
             <nav class="primary-navigation" id="primary-navigation" aria-label="मुख्य नेविगेशन" data-navigation>
@@ -20,7 +20,7 @@ if (header) {
 if (footer) {
     footer.innerHTML = `
         <div class="container footer-inner">
-            <a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true"><span>उ</span></span><span class="brand-copy"><strong>उत्तराखंड सरकार</strong><small>महिला सशक्तिकरण एवं बाल विकास</small></span></a>
+            <a class="brand brand-footer" href="index.html"><span class="brand-mark" aria-hidden="true"><img src="assets/images/uk_logo.jpeg" alt="उत्तराखंड सरकार" loading="lazy"></span><span class="brand-copy"><strong>उत्तराखंड सरकार</strong><small>एकल महिला स्वरोजगार योजना</small></span></a>
             <p>मुख्यमंत्री एकल महिला स्वरोजगार योजना<br><span>योजना जानकारी एवं आवेदन प्रारूप</span></p>
             <a class="footer-top" href="#main-content">पृष्ठ के शीर्ष पर ↑</a>
         </div>`;
