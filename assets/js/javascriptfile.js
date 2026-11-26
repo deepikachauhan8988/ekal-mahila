@@ -358,3 +358,44 @@ if (loginForm) {
         otpSent = false;
     });
 }
+
+const heroCarousel = document.querySelector(".hero-photo-carousel");
+
+if (heroCarousel) {
+    const slides = Array.from(heroCarousel.querySelectorAll("[data-slide]"));
+    const dots = Array.from(heroCarousel.querySelectorAll("[data-go-to]"));
+    let activeSlide = 0;
+    let timer;
+
+    const showSlide = (index) => {
+        activeSlide = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+            const isActive = slideIndex === activeSlide;
+            slide.classList.toggle("slide-active", isActive);
+            slide.setAttribute("aria-hidden", String(!isActive));
+        });
+        dots.forEach((dot, dotIndex) => {
+            const isActive = dotIndex === activeSlide;
+            dot.classList.toggle("active", isActive);
+            dot.setAttribute("aria-selected", String(isActive));
+            dot.setAttribute("aria-pressed", String(isActive));
+        });
+    };
+
+    const start = () => {
+        clearInterval(timer);
+        timer = setInterval(() => showSlide(activeSlide + 1), 2000);
+    };
+    const stop = () => clearInterval(timer);
+
+    dots.forEach((dot) => dot.addEventListener("click", () => {
+        stop();
+        showSlide(Number(dot.dataset.goTo));
+        start();
+    }));
+
+    heroCarousel.addEventListener("mouseenter", stop);
+    heroCarousel.addEventListener("mouseleave", start);
+
+    start();
+}

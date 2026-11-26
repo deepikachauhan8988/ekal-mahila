@@ -1260,6 +1260,73 @@ img { max-width: 100%; height: auto; display: block; }
 .eligibility-mint { color: #12855b; background: #e4f8ef; }
 .eligibility-blue { color: #236bc2; background: #e5f2ff; }
 .reference-eligibility-card h3 { margin: 8px 0 0; color: #17285f; font-size: 12px; font-weight: 700; line-height: 1.5; }
+
+/* Hero photo carousel (reference-home right side) */
+.hero-photo-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.photo-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.photo-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .7s ease, visibility .7s;
+}
+.photo-slide.slide-active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+.photo-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.photo-dots {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 4;
+}
+.photo-dot {
+    width: 10px;
+    height: 10px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.55);
+    padding: 0;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.photo-dot:hover {
+    background: rgba(255,255,255,.9);
+    transform: scale(1.25);
+}
+.photo-dot.active {
+    width: 34px;
+    border-radius: 100px;
+    background: #f5d8a8;
+    box-shadow: 0 0 14px rgba(245,216,168,.5);
+}
+
+@media (max-width: 860px) {
+    .photo-dots { bottom: 14px; gap: 8px; }
+    .photo-dot { width: 8px; height: 8px; }
+    .photo-dot.active { width: 26px; }
+}
 .reference-eligibility-link { width: fit-content; display: flex; align-items: center; gap: 8px; margin: 12px auto 0; color: #4b17b7; font-size: 12px; font-weight: 700; }
 .reference-eligibility-link:hover { color: #082f88; }
 
@@ -1389,7 +1456,7 @@ img { max-width: 100%; height: auto; display: block; }
 .registration-hero::before { inset: 0 28% 0 0; background: linear-gradient(145deg, rgba(91, 39, 222, .9), rgba(114, 75, 235, .62)); clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%); }
 .registration-hero::after { right: 0; bottom: -55px; width: 58%; height: 105px; border-radius: 50% 0 0; background: rgba(235, 238, 255, .54); transform: rotate(-8deg); }
 .registration-hero-inner { position: relative; z-index: 1; min-height: 122px; display: flex; align-items: center; justify-content: space-between; }
-.registration-hero h1 { margin: 0; color: #fff; font-size: clamp(28px, 4.2vw, 38px); font-weight: 700; line-height: 1.12; }
+.registration-hero h1 { margin: 0; color: #fff; font-size:20px; font-weight: 700; line-height: 1.12; }
 .registration-hero p { margin: 5px 0 0; color: #ffda24; font-size: 22px; font-weight: 700; line-height: 1.3; }
 .registration-hero-art { position: absolute; top: 0; right: 0; width: min(55%, 430px); height: 100%; }
 
