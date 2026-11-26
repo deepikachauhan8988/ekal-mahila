@@ -260,3 +260,101 @@ if (form) {
     updateConditionalFields();
     updateFormStep(0);
 }
+
+const loginForm = document.querySelector("#login-form");
+
+if (loginForm) {
+    const sendOtpBtn = loginForm.querySelector("#send-otp-btn");
+    const loginSubmitBtn = loginForm.querySelector("#login-submit-btn");
+    const message = loginForm.querySelector("[data-login-message]");
+    let otpSent = false;
+    let otpTimer = null;
+
+    const showMessage = (html, isError = false) => {
+        message.innerHTML = html;
+        message.hidden = false;
+        message.classList.toggle("error", isError);
+        message.scrollIntoView({ behavior: "smooth", block: "center" });
+    };
+
+    const startOtpTimer = () => {
+        let seconds = 300;
+        sendOtpBtn.disabled = true;
+        sendOtpBtn.innerHTML = `<i class="fa-solid fa-clock" aria-hidden="true"></i> ${seconds}s`;
+        otpTimer = setInterval(() => {
+            seconds--;
+            if (seconds <= 0) {
+                clearInterval(otpTimer);
+                sendOtpBtn.disabled = false;
+                sendOtpBtn.innerHTML = `<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> OTP भेजें`;
+            } else {
+                sendOtpBtn.innerHTML = `<i class="fa-solid fa-clock" aria-hidden="true"></i> ${seconds}s`;
+            }
+        }, 1000);
+    };
+
+    const validateMobile = (mobile) => {
+        return /^[6-9][0-9]{9}$/.test(mobile);
+    };
+
+    const validateOtp = (otp) => {
+        return /^\d{6}$/.test(otp);
+    };
+
+    sendOtpBtn.addEventListener("click", () => {
+        const mobile = loginForm.elements.namedItem("mobile").value.trim();
+        if (!validateMobile(mobile)) {
+            loginForm.elements.namedItem("mobile").reportValidity();
+            loginForm.elements.namedItem("mobile").focus();
+            return;
+        }
+        otpSent = true;
+        startOtpTimer();
+        showMessage(`<strong>OTP भेजा गया!</strong><p>मोबाइल नंबर <b>${mobile}</b> पर 6 अंकों का OTP भेजा गया है। कृपया OTP दर्ज करें।</p>`, false);
+    });
+
+    loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const mobile = loginForm.elements.namedItem("mobile").value.trim();
+        const otp = loginForm.elements.namedItem("otp").value.trim();
+
+        if (!validateMobile(mobile)) {
+            loginForm.elements.namedItem("mobile").reportValidity();
+            loginForm.elements.namedItem("mobile").focus();
+            return;
+        }
+        if (!validateOtp(otp)) {
+            loginForm.elements.namedItem("otp").reportValidity();
+            loginForm.elements.namedItem("otp").focus();
+            return;
+        }
+
+        loginSubmitBtn.disabled = true;
+        loginSubmitBtn.innerHTML = `<span class="spinner-border spinner-border-sm" aria-hidden="true"></span> लॉगिन हो रहा है...`;
+
+        setTimeout(() => {
+            if (otp === "123456") {
+                showMessage(`<strong>लॉगिन सफल!</strong><p>आपका स्वागत है। आवेदन फॉर्म पर पुनर्निर्देशित किया जा रहा है...</p>`, false);
+                setTimeout(() => {
+                    window.location.href = "registration.html";
+                }, 1500);
+            } else {
+                showMessage(`<strong>गलत OTP!</strong><p>दर्ज किया गया OTP सही नहीं है। कृपया सही OTP दर्ज करें।</p>`, true);
+                loginSubmitBtn.disabled = false;
+                loginSubmitBtn.innerHTML = `<i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> लॉगिन`;
+            }
+        }, 1000);
+    });
+
+    loginForm.addEventListener("reset", () => {
+        if (otpTimer) {
+            clearInterval(otpTimer);
+            otpTimer = null;
+        }
+        sendOtpBtn.disabled = false;
+        sendOtpBtn.innerHTML = `<i class="fa-solid fa-paper-plane" aria-hidden="true"></i> OTP भेजें`;
+        message.hidden = true;
+        message.classList.remove("error");
+        otpSent = false;
+    });
+}
